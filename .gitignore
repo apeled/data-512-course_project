@@ -1,4 +1,4 @@
 # Ignore large data files
 data/fire_season_gaseous_aqi_peoria.json
 data/USGS_Wildland_Fire_Combined_Dataset.json
-data/USGS_Wildland_Fire_Combined_Dataset.json.gz
+
