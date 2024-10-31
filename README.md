@@ -17,9 +17,8 @@ This project aims to estimate and analyze the impact of wildfire smoke on Peoria
 │   ├── Wildfire_short_sample_2024.json          # Sample wildfire data
 │   ├── fire_season_gaseous_aqi_peoria.json      # Gaseous AQI data for fire season
 │   ├── fire_season_particulate_aqi_peoria.json  # Particulate AQI data for fire season
-│   ├── gaseous_aqi_peoria.json                  # All-season gaseous AQI data
 │   ├── monitoring_stations_peoria.json          # Monitors near Peoria
-│   ├── particulate_aqi_peoria.json              # All-season particulate AQI data
+│   ├── smoke_impact_peoria.csv                  # Annual smoke impact estimates for Peoria
 │   └── peoria_wildfire_proximity.json           # Pre-computed wildfire proximity data
 ├── epa_air_quality_history_example.ipynb        # EPA AQI data retrieval example
 ├── test.ipynb                                   # Additional tests and validations
@@ -31,20 +30,58 @@ This project aims to estimate and analyze the impact of wildfire smoke on Peoria
 │       └── __init__.cpython-39.pyc
 └── wildfire_geo_proximity_example.ipynb         # Wildfire proximity computation example
 ```
+  
+# Data Directory (`data/`)
 
-## Data Sources
+This directory contains all input and generated data files used in this analysis:
 
-1. **USGS Wildland Fire Dataset** (`USGS_Wildland_Fire_Combined_Dataset.json`):
-   - This dataset contains information on historical wildfires, including fire perimeters, location, and size. The dataset is retrieved from the [USGS ScienceBase repository](https://www.sciencebase.gov/catalog/item/61aa537dd34eb622f699df81). Relevant fields used in the analysis include:
-     - `Fire_Year`: The year of the fire.
-     - `GIS_Acres`: The estimated area burned by the fire.
-     - `geometry`: Contains the coordinates defining the perimeter of each fire.
+- **`USGS_Wildland_Fire_Combined_Dataset.json`**:
+  - **`attributes`**: Dictionary containing detailed information about each wildfire event.
+    - **`OBJECTID`**: Unique identifier for each fire entry.
+    - **`USGS_Assigned_ID`**: Assigned ID by USGS for internal tracking.
+    - **`Assigned_Fire_Type`**: Classification of fire type (e.g., Wildfire).
+    - **`Fire_Year`**: Year in which the fire occurred.
+    - **`GIS_Acres`**: Fire area in acres.
+    - **`GIS_Hectares`**: Fire area in hectares.
+    - **`Source_Datasets`**: Origin dataset(s) from which fire information was obtained.
+    - **`Listed_Fire_Names`**: Names associated with the fire in records.
+    - **`Listed_Fire_Codes`**: Codes associated with the fire, if any.
+    - **`Listed_Fire_IDs`**: Unique identifiers for the fire in external systems.
+    - **`Fire_Polygon_Tier`**: Polygon tier level indicating data quality.
+    - **`Listed_Fire_Dates`**: Recorded dates for the fire.
+    - **`Wildfire_Notice`**: Additional metadata or notices about data accuracy or limitations.
 
-2. **EPA AQI Data** (`particulate_aqi_peoria.json`, `gaseous_aqi_peoria.json`):
-   - Air quality data, including particulate and gaseous AQI values, is retrieved using the EPA’s AQS API. The data focuses on daily AQI measures related to PM2.5, PM10, CO, NO2, and O3. Key fields used include:
-     - `date`: The date of the AQI observation.
-     - `aqi`: The Air Quality Index value for each pollutant.
-     - `sample_duration`: Specifies if the reading is based on a 24-hour or hourly sample.
+- **`Wildfire_short_sample_2024.json`**: A subset of `USGS_Wildland_Fire_Combined_Dataset.json` containing fewer wildfire events for testing and validation purposes. Variables follow the same structure as the complete wildfire dataset.
+
+- **`fire_season_gaseous_aqi_peoria.json`**: AQI data specific to gaseous pollutants in Peoria during the defined fire season.
+  - **`year`**: Year of data recording.
+  - **`site_id`**: ID of the monitoring station.
+  - **`local_site_name`**: Name of the monitoring site.
+  - **`parameter_name`**: Specific gaseous pollutant being measured (e.g., ozone).
+  - **`sample_duration`**: Duration of sampling for each AQI reading.
+  - **`arithmetic_mean`**: Mean AQI value for the specified duration.
+
+- **`fire_season_particulate_aqi_peoria.json`**: AQI data specific to particulate pollutants in Peoria during the fire season.
+  - **`year`**: Year of data collection.
+  - **`site_id`**: Monitoring station ID.
+  - **`local_site_name`**: Name of the monitoring site.
+  - **`parameter_name`**: Type of particulate matter measured (e.g., PM2.5).
+  - **`sample_duration`**: Sample collection duration.
+  - **`arithmetic_mean`**: Average AQI measurement for the sample duration.
+
+- **`monitoring_stations_peoria.json`**: Contains metadata for monitoring stations in Peoria, AZ.
+  - **`station_id`**: Unique identifier for the monitoring station.
+  - **`location`**: Coordinates of the monitoring station.
+  - **`pollutants_monitored`**: List of pollutants monitored at the station.
+
+- **`peoria_wildfire_proximity.json`**: Data containing proximity calculations between Peoria and various wildfire events.
+  - **`fire_id`**: Unique identifier of the fire.
+  - **`distance`**: Computed distance from Peoria to the wildfire perimeter.
+  - **`year`**: Year the fire occurred.
+
+- **`smoke_impact_peoria.csv`**: Annual smoke impact estimates for Peoria based on fire proximity, fire size, and seasonal occurrence of wildfires within 650 miles.
+  - **`Year`**: Year of analysis.
+  - **`Smoke Impact`**: Calculated smoke impact estimate for each year, representing an index of smoke-related health and environmental impact based on nearby fires. 
 
 ## Key Scripts and Notebooks
 
