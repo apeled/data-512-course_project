@@ -85,7 +85,7 @@ This project aims to estimate and analyze the impact of wildfire smoke on Peoria
    To clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/data-512-wildfire-smoke-impact.git
+    git clone https://github.com/apeled/data-512-wildfire-smoke-impact.git
     cd data-512-wildfire-smoke-impact
     ```
 
