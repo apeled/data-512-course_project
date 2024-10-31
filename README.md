@@ -13,13 +13,13 @@ This project aims to estimate and analyze the impact of wildfire smoke on Peoria
 ├── README.md                                    # This README file
 ├── common_analysis.ipynb                        # Main analysis notebook
 ├── data                                         # Folder containing datasets
-│   ├── USGS_Wildland_Fire_Combined_Dataset.json # Full wildfire dataset
+│   ├── USGS_Wildland_Fire_Combined_Dataset.json # Full wildfire dataset NOT IN THIS COMMIT
 │   ├── Wildfire_short_sample_2024.json          # Sample wildfire data
 │   ├── fire_season_gaseous_aqi_peoria.json      # Gaseous AQI data for fire season
-│   ├── fire_season_particulate_aqi_peoria.json  # Particulate AQI data for fire season
-│   ├── monitoring_stations_peoria.json          # Monitors near Peoria
-│   ├── smoke_impact_peoria.csv                  # Annual smoke impact estimates for Peoria
-│   └── peoria_wildfire_proximity.json           # Pre-computed wildfire proximity data
+│   ├── fire_season_particulate_aqi_peoria.json  # Particulate AQI data for fire season NOT IN THIS COMMIT
+│   ├── monitoring_stations_peoria.json          # Monitors near Peoria NOT IN THIS COMMIT
+│   ├── smoke_impact_peoria.csv                  # Annual smoke impact estimates for Peoria NOT IN THIS COMMIT
+│   └── peoria_wildfire_proximity.json           # Pre-computed wildfire proximity data NOT IN THIS COMMIT
 ├── epa_air_quality_history_example.ipynb        # EPA AQI data retrieval example
 ├── test.ipynb                                   # Additional tests and validations
 ├── wildfire                                     # Wildfire module
@@ -33,7 +33,7 @@ This project aims to estimate and analyze the impact of wildfire smoke on Peoria
   
 # Data Directory (`data/`)
 
-This directory contains all input and generated data files used in this analysis:
+This directory contains all input and generated data files used in this analysis, note that there are many that were to large and I am working on finding a way to include them in future commits:
 
 - **`USGS_Wildland_Fire_Combined_Dataset.json`**:
   - **`attributes`**: Dictionary containing detailed information about each wildfire event.
