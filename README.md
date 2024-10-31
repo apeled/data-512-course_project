@@ -12,6 +12,7 @@ This project aims to estimate and analyze the impact of wildfire smoke on Peoria
 ├── LICENSE                                      # Project license file
 ├── README.md                                    # This README file
 ├── common_analysis.ipynb                        # Main analysis notebook
+├── DATA_512_Common_Analysis.pdf                 # Deliverables for Part 1: Data Visualizations and Reflection Statement
 ├── data                                         # Folder containing datasets
 │   ├── USGS_Wildland_Fire_Combined_Dataset.json # Full wildfire dataset NOT IN THIS COMMIT
 │   ├── Wildfire_short_sample_2024.json          # Sample wildfire data
