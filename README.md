@@ -28,6 +28,7 @@ By integrating geospatial, environmental, and economic datasets, this project de
 ├── docs                                         # Supporting documents and deliverables
 │   ├── DATA_512_Common_Analysis.pdf             # Part 1: Visualizations and Reflection Statement
 │   ├── DATA_512_Extension_Plan.pdf              # Project plan for analysis extension
+│   ├── DATA_512_Final_Report.pdf                # Final Report for the entire project
 │   └── apeled_presentation_peoria_az.pdf        # Presentation summarizing findings
 ├── epa_air_quality_history_example.ipynb        # EPA AQI data retrieval example
 ├── wildfire_geo_proximity_example.ipynb         # Wildfire proximity computation example
