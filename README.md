@@ -292,7 +292,7 @@ The project requires the following libraries:
 ### **3. API Keys Setup**
 
 #### EPA AQS API Key
-1. Obtain an API key from the [EPA AQS API](https://aqs.epa.gov/api).
+1. Obtain an API key from the [EPA AQS API](https://aqs.epa.gov/aqsweb/documents/data_api.html#signup).
 2. Replace the placeholder in `epa_air_quality_history_example.ipynb` with your API key:
    ```python
    api_key = "YOUR_EPA_API_KEY"
@@ -382,7 +382,7 @@ Despite these limitations, the analysis provides a strong foundation for underst
 
 - This code is licensed under the MIT License.
 - **Wildfire data**: Provided by the [USGS ScienceBase repository](https://www.sciencebase.gov/catalog/item/61aa537dd34eb622f699df81).
-- **EPA AQI data**: Accessed through the [EPA AQS API](https://aqs.epa.gov/aqsweb/documents/data_api.html), used in compliance with the [EPA’s Terms of Use](https://www.epa.gov/privacy/privacy-act-system-records-notices-aqs-air-quality-system).
+- **EPA AQI data**: Accessed through the [EPA AQS API](https://aqs.epa.gov/aqsweb/documents/data_api.html#signup), used in compliance with the [EPA’s Terms of Use](https://www.epa.gov/privacy/privacy-act-system-records-notices-aqs-air-quality-system).
 - **Stock data**: Retrieved using the [Alpha Vantage API](https://www.alphavantage.co/) under their free-tier license, adhering to the API’s terms of use.
 - **Code Examples**: Based on examples provided by Dr. David W. McDonald’s *Wildfire Proximity Computation Example* and *US EPA Air Quality System API Example*, developed for DATA 512 at UW, under the [Creative Commons CC-BY license](https://creativecommons.org/licenses/by/4.0/).
 - **Geodetic distance calculations**: Utilized geospatial libraries like Pyproj, with methodology inspired by Dr. McDonald’s example notebooks.
